@@ -1,3 +1,14 @@
-import Page from './page'; // Importing page.tsx as the homepage
+// pages/index.tsx
 
-export default Page; // Exporting page.tsx as the default export
+import React from 'react';
+import LoginLayout from './components/Login/LoginLayout';
+
+const LoginPage: React.FC = () => {
+  return (
+    <div>
+      <LoginLayout />
+    </div>
+  );
+};
+
+export default LoginPage;
