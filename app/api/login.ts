@@ -1,6 +1,6 @@
 // pages/api/login.ts
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { connectToDatabase } from '../../util/mongodb';
+import { connectToDatabase } from '../util/mogodb';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {
@@ -8,6 +8,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     // Connect to MongoDB
     const { db } = await connectToDatabase();
+
+    if (!db) {
+      res.status(500).json({ error: 'Database connection failed.' });
+      return;
+    }
 
     // Check if user exists
     const user = await db.collection('users').findOne({ username });

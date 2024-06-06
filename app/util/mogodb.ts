@@ -1,21 +1,17 @@
-// util/mongodb.ts
 import { MongoClient, Db } from 'mongodb';
 
-let cachedClient: MongoClient;
-let cachedDb: Db;
+let cachedClient: MongoClient | null = null;
+let cachedDb: Db | null = null;
 
 async function connectToDatabase() {
-  if (cachedClient && cachedClient.isConnected()) {
+  if (cachedClient && cachedDb) {
     return { client: cachedClient, db: cachedDb };
   }
 
-  cachedClient = new MongoClient(process.env.MONGODB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  });
+  cachedClient = new MongoClient(process.env.MONGODB_URI!);
 
   await cachedClient.connect();
-  cachedDb = cachedClient.db(process.env.MONGODB_DB);
+  cachedDb = cachedClient.db(process.env.MONGODB_DB!);
 
   return { client: cachedClient, db: cachedDb };
 }
