@@ -1,3 +1,5 @@
+// components/Login/LoginLayout.tsx
+
 import React from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -8,78 +10,76 @@ import SignupLink from './SignupLink';
 
 const LoginLayout: React.FC = () => {
   return (
-    <div className="flex items-center justify-center max-w-screen-ml min-h-screen bg-[#7BA0FF]">
+    <div className="flex items-center justify-center min-h-screen bg-[#7BA0FF]">
       <Head>
         <title>Sign in</title>
       </Head>
-      <div className="w-[1100px] h-[800px] bg-[#FFD4E9] rounded-[38px] mt-[62px] p-[20px]">
+      <div className="w-[1100px] h-[800px] bg-[#FFD4E9] rounded-[38px] mt-[62px] p-[20px] relative">
         <div className="absolute top-4 left-4">
-          <div className="ml-[513.5px] mt-[250px]">
+          <Image
+            src="/images/violet_Model.png"
+            alt="ld-block-3d-model"
+            width={800}
+            height={600}
+          />
+          <div className="-mt-[460px] ml-[551px] ">
             <Image
-              src="/violet_Model.png"
-              alt="ld-block-3d-model"
-              width={800}
-              height={600}
+              src="/images/white-hoop.svg"
+              alt="bk-box"
+              width={168}
+              height={168}
             />
-            <div className=" -mt-[460px] ml-[551px] ">
-              <Image
-                src="/white-hoop.svg"
-                alt="bk-box"
-                width={168}
-                height={168}
-              />
-            </div>
-            <div className="ml-[665px] -mt-[125px]">
-              <Image
-                src="/orange circle.svg"
-                alt="box1"
-                width={70}
-                height={70}
-              />
-            </div>
-            <div className="ml-[525px] -mt-[20px] ">
-              <Image
-                src="/yellow-cube-sq.svg"
-                alt="box2"
-                width={170}
-                height={119}
-              />
-            </div>
-            <div className="ml-[540px] -mt-[180px]">
-              <Image
-                src="/white circle.svg"
-                alt="box3"
-                width={62}
-                height={63}
-              />
-            </div>
-            <div className="ml-[580px] -mt-[460px]">
-              <Image
-                src="/painter-.svg"
-                alt="box3"
-                width={280}
-                height={430}
-              />
-            </div>
-            <div className=" ml-[250px] -mt-[50px]">
-              <Image
-                src="/Hoodie.svg"
-                alt="hoodie-3D-model"
-                width={300}
-                height={640}
-              />
-            </div>
+          </div>
+          <div className="ml-[665px] -mt-[125px]">
+            <Image
+              src="/images/orange circle.svg"
+              alt="box1"
+              width={70}
+              height={70}
+            />
+          </div>
+          <div className="ml-[525px] -mt-[20px] ">
+            <Image
+              src="/images/yellow-cube-sq.svg"
+              alt="box2"
+              width={170}
+              height={119}
+            />
+          </div>
+          <div className="ml-[540px] -mt-[180px]">
+            <Image
+              src="/images/white circle.svg"
+              alt="box3"
+              width={62}
+              height={63}
+            />
+          </div>
+          <div className="ml-[580px] -mt-[460px]">
+            <Image
+              src="/images/painter-.svg"
+              alt="box3"
+              width={280}
+              height={430}
+            />
+          </div>
+          <div className="ml-[250px] -mt-[50px]">
+            <Image
+              src="/images/Hoodie.svg"
+              alt="hoodie-3D-model"
+              width={300}
+              height={640}
+            />
           </div>
         </div>
-        <div className="relative w-[350px] max-w-md p-7 bg-white bg-opacity-20 rounded-3xl shadow-md backdrop-blur-md  ml-[60px] mt-[80px]">
+        <div className="relative w-[350px] max-w-md p-7 bg-white bg-opacity-20 rounded-3xl shadow-md backdrop-blur-md ml-[60px] mt-[80px]">
           <Image
             className="-ml-[30px]"
-            src="/Web_Logo.svg"
+            src="/images/Web_Logo.svg"
             alt="Image description"
             width={200}
             height={61}
           />
-          <LoginForm />
+        <LoginForm />
           <div className="space-y-6">
             <div className="ml-[165px] text-[#3f7bf0] text-[13px] mt-[30px]">
               No account?{' '}
@@ -117,3 +117,4 @@ const LoginLayout: React.FC = () => {
 };
 
 export default LoginLayout;
+

@@ -23,7 +23,7 @@ const ForgotPasswordForm: React.FC = () => {
 
       if (!response.ok) {
         const errorData = await response.json();
-        throw new Error(errorData.message || 'Failed to reset password');
+        throw new Error(errorData.error || 'Failed to reset password');
       }
 
       // Reset form state
@@ -33,7 +33,7 @@ const ForgotPasswordForm: React.FC = () => {
 
       // Handle success, show a success message, redirect, or any other action
       console.log('Password reset link sent to your email.');
-    } catch (error: any) {
+    } catch (error) {
       setIsSubmitting(false);
       setErrorMessage(error.message || 'Failed to reset password');
     }
@@ -65,4 +65,3 @@ const ForgotPasswordForm: React.FC = () => {
 };
 
 export default ForgotPasswordForm;
-

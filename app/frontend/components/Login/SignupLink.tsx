@@ -5,7 +5,11 @@ const SignupLink: React.FC = () => {
   return (
     <p>
       Don't have an account?{' '}
-      <Link href="/signup">Sign up here</Link>
+      <Link href="/signup">
+        <a className="text-blue-500 hover:underline font-normal underline">
+          Sign Up
+        </a>
+      </Link>
     </p>
   );
 };

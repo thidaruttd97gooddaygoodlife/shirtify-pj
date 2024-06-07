@@ -1,6 +1,6 @@
 
 import React from 'react';
-import LoginLayout from './components/Login/LoginLayout';
+import LoginLayout from './frontend/components/Login/LoginLayout';
 
 const LoginPage: React.FC = () => {
   return (

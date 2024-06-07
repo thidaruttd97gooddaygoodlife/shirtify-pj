@@ -1,6 +1,6 @@
 // _app.tsx
 import { AppProps } from 'next/app';
-import Login from './components/Login/LoginLayout'; // ต้องใช้ไพล์ที่เราสร้างขึ้นใหม่
+import Login from './frontend/components/Login/LoginLayout'; // ต้องใช้ไพล์ที่เราสร้างขึ้นใหม่
 
 
 function MyApp({ Component, pageProps }: AppProps) {
